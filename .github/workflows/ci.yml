@@ -2,8 +2,10 @@ name: Continous Integration
 
 on:
   push:
-    branches: [ staging , release, master ]
-
+    branches:
+      - staging 
+      - release
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
