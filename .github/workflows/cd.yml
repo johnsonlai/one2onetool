@@ -3,8 +3,8 @@ name: Deploy to Amazon ECS
 on:
   push:
     branches:
-      - master
-
+      - staging
+      - release
 jobs:
   Build:
     name: Build image
