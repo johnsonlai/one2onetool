@@ -36,6 +36,7 @@ jobs:
           from: jlaisg@outlook.com
       - name: PWD
         run: echo $(pwd)
+        run: echo $(ls -a)
       - name: Read value from Properties-file
         if: success()
         id: read_property
