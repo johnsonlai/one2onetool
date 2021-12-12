@@ -3,14 +3,19 @@ name: Deploy to Amazon ECS
 on:
   push:
     branches:
-      - staging
-      - release
+      - master
+
 jobs:
   Build:
     name: Build image
     runs-on: ubuntu-latest
 
     steps:
+    - name: Application Version
+      id: version
+      uses: paulhatch/semantic-version@v4.0.2
+      with:
+        change_path: "src/service"
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Configure AWS credentials
@@ -32,5 +37,4 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        
         
