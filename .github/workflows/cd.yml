@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  AWS_REGION: ap-southeast1
+  AWS_REGION: ap-southeast-1
   ECR_REPOSITORY: onetoonetool
   ECS_SERVICE: ec2service                
   ECS_CLUSTER: onetooneec             
