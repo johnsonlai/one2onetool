@@ -22,7 +22,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-  deploy:
+  cddeploy:
     name: Setup, Build, Publish, and Deploy
     needs: buildcheck
     if: !contains(needs.buildcheck.outputs.status, 'failure')
