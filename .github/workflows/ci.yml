@@ -40,7 +40,7 @@ jobs:
         uses: christian-draeger/read-properties@1.0.1
         with:
           path: 'package.json'
-          property: 'version'
+          property: 'name'
       - run: echo $(ls package.json)
       - name: Increase release version 
         run: echo ${{ steps.read_property.outputs.value }}
