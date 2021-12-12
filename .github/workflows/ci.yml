@@ -34,12 +34,8 @@ jobs:
           body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
           to: johnsonlaizx@gmail.com
           from: jlaisg@outlook.com
-
-      - name: check pwd 
-        run:
-          command: |
-            echo $(pwd)
-            echo $(ls)
+      - name: PWD
+        run: echo $(pwd)
       - name: Read value from Properties-file
         if: success()
         id: read_property
